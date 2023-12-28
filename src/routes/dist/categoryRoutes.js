@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var categoryController_1 = require("../controller/categoryController");
+var auth_1 = require("../middleware/auth");
+var multer_1 = require("../utils/multer");
+var router = express_1["default"].Router();
+var Controller = new categoryController_1["default"]();
+router.post("/create", auth_1.isAuthenticatedUser, multer_1.upload, Controller.createCategory);
+router.get("/all", Controller.getAllCategory);
+router.get("/single/:id", Controller.getCategory);
+router.put("/:id", multer_1.upload, auth_1.isAuthenticatedUser, Controller.updateCategory);
+router["delete"]("/:id", Controller.deleteCategory);
+exports["default"] = router;
