@@ -30,8 +30,9 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "nodemon src/index.ts",
-		"build": "mkdir build && cp src/index.ts build/ && cp src/*.ts build/"
+		"build": "tsc"
 	},
+	
 	"keywords": [],
 	"author": "",
 	"license": "ISC",

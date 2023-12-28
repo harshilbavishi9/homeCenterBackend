@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.generateOtp = void 0;
+const generateOtp = () => {
+    var digits = '0123456789';
+    let OTP = '';
+    for (let i = 0; i < 5; i++) {
+        OTP += digits[Math.floor(Math.random() * 10)];
+    }
+    return OTP;
+};
+exports.generateOtp = generateOtp;
